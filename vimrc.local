@@ -1,0 +1,100 @@
+" Vim UI {
+  set number
+  set relativenumber
+  set foldenable
+  set foldmethod=marker
+  set foldmarker={,}
+  set foldlevel=0
+" }
+
+" General {
+  set pastetoggle=<F7>        " pastetoggle (sane indentation on pastes)
+  set wrap                    " wrap long lines
+  setlocal wrap
+  set autoindent              " Indent at the same level of the previous line
+  set nobackup                " No backup
+  set noswapfile              " No swap file
+  set mouse=                  " Disable mouse usage
+  set virtualedit=            " Don't allow for cursor beyond last character
+  set shiftwidth=2
+  set expandtab
+  set tabstop=2
+  set softtabstop=2
+" }
+
+" Key (re)Mappings {
+  let mapleader=';'
+  inoremap jj <c-[><c-[>
+  inoremap ww <c-[><c-[>:update<CR>
+  unmap j
+  unmap k
+  nmap <leader>v :vsp ~/.config/vim/vimrc.local<CR>
+  unmap H
+  unmap L
+  map <S-H> gT
+  map <S-L> gt
+" }
+
+" Abbreviations {
+  iab <silent> xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<CR>
+" }
+
+" Plugins {
+  " calendar {
+    if isdirectory(expand("~/.vim/bundle/calendar-vim"))
+      let g:calendar_diary = '~/backup/diary'
+      let g:calendar_mark = 'right'
+      let g:calendar_filetype = 'markdown'
+    endif
+  " }
+
+  " NerdTree {
+    if isdirectory(expand("~/.vim/bundle/nerdtree"))
+      map <C-e> <plug>NERDTreeTabsToggle<CR>
+      let NERDTreeWinPos = "left"
+      let NERDTreeQuitOnOpen = 0
+      let NERDTreeShowHidden = 1
+      let NERDTreeKeepTreeInNewTab = 1
+      let NERDTreeWinSize = 30
+    endif
+  " }
+
+  " Indent_guides {
+    if isdirectory(expand("~/.vim/bundle/vim-indent-guides"))
+      let g:indent_guides_enable_on_vim_startup = 1
+      let g:indent_guides_start_level = 2
+      let g:indent_guides_size = 1
+      nmap <silent> <leader>i <plug>IndentGuidesToggle
+    endif
+  " }
+
+  " Easy motion {
+    if isdirectory(expand("~/.vim/bundle/vim-easymotion"))
+      let g:EasyMotion_leader_key = '<Space>'
+      nmap s <plug>(easymotion-s)
+      omap / <plug>(easymotion-sn)
+      omap / <plug>(easymotion-tn)
+      omap n <plug>(easymotion-next)
+      omap N <plug>(easymotion-prev)
+      map <leader>l <plug>(easymotion-lineforward)
+      map <leader>h <plug>(easymotion-linebackward)
+      map <leader>j <plug>(easymotion-j)
+      map <leader>k <plug>(easymotion-k)
+    endif
+  " }
+
+  " ycm {
+    if isdirectory(expand("~/.vim/bundle/YouCompleteMe"))
+      let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/conf/ycm.cpp.py'
+      let g:ycm_confirm_extra_conf = 0
+      let g:ycm_min_num_of_chars_for_completion = 2
+      let g:ycm_seed_identifiers_with_syntax = 1
+      let g:ycm_complete_in_comments = 1
+      let g:ycm_complete_in_strings = 1
+      let g:ycm_collect_identifiers_from_comments_and_strings = 0
+      let g:ycm_error_symbol = '>>'
+      let g:ycm_warning_symbol = '>*'
+      let g:ycm_key_inbock_completion = '<C-y>'
+    endif
+  " }
+" }

@@ -1,0 +1,9 @@
+" Bundles {
+
+    " diary {
+
+        if count(g:spf13_bundle_groups, 'diary')
+            Bundle 'mattn/calendar-vim'
+        endif
+    " }
+" }
