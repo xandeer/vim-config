@@ -1,23 +1,23 @@
-if filereadable(expand("~/.local/share/spf13-vim/.vimrc.before"))
-  source ~/.local/share/spf13-vim/.vimrc.before
+if filereadable(expand("$SPF13_VIM/.vimrc.before"))
+  source $SPF13_VIM/.vimrc.before
 endif
 
-if filereadable(expand("~/.config/vim/vimrc.before.local"))
-  source ~/.config/vim/vimrc.before.local
+if filereadable(expand("$LOCAL_VIM/vimrc.before.local"))
+  source $LOCAL_VIM/vimrc.before.local
 endif
 
-if filereadable(expand("~/.local/share/spf13-vim/.vimrc.bundles"))
-  source ~/.local/share/spf13-vim/.vimrc.bundles
+if filereadable(expand("$SPF13_VIM/.vimrc.bundles"))
+  source $SPF13_VIM/.vimrc.bundles
 endif
 
-if filereadable(expand("~/.config/vim/vimrc.bundles.local"))
-  source ~/.config/vim/vimrc.bundles.local
+if filereadable(expand("$LOCAL_VIM/vimrc.bundles.local"))
+  source $LOCAL_VIM/vimrc.bundles.local
 endif
 
-if filereadable(expand("~/.local/share/spf13-vim/.vimrc"))
-  source ~/.local/share/spf13-vim/.vimrc
+if filereadable(expand("$SPF13_VIM/.vimrc"))
+  source $SPF13_VIM/.vimrc
 endif
 
-if filereadable(expand("~/.config/vim/vimrc.local"))
-  source ~/.config/vim/vimrc.local
+if filereadable(expand("$LOCAL_VIM/vimrc.local"))
+  source $LOCAL_VIM/vimrc.local
 endif
