@@ -20,6 +20,8 @@
   set expandtab
   set tabstop=2
   set softtabstop=2
+  set backupdir=~/.cache/vim/vimbackup
+  set viminfo+=n~/.cache/vim/viminfo
 " }
 
 " Key (re)Mappings {

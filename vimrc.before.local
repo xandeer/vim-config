@@ -10,4 +10,5 @@
     let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc', 'go', 'diary']
     " map edit config
     let g:spf13_edit_config_mapping='<leader>ec'
+    let g:spf13_consolidated_directory = $HOME . '/.cache/vim/'
 " }
